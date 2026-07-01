@@ -16,19 +16,8 @@ export function ProductsPageClient() {
         limit: 12,
         sort: "newest",
     });
-    console.log(products)
-    if (isLoading) {
-        return <p className="text-muted-foreground">در حال دریافت محصولات...</p>;
-    }
 
-    if (error) {
-        return (
-            <div className="space-y-3">
-                <p className="text-destructive">خطا در دریافت محصولات</p>
-                <Button onClick={() => refetch()}>تلاش دوباره</Button>
-            </div>
-        );
-    }
+
 
     return (
         <div className="space-y-6">
@@ -39,8 +28,9 @@ export function ProductsPageClient() {
                     onChange={(event) => setSearch(event.target.value)}
                 />
             </div>
+           
 
-            <ProductGrid products={products?.data ?? []} />
+            <ProductGrid products={products?.data ?? []} isLoading={isLoading} error={error} refetch={refetch} />
         </div>
     );
 }

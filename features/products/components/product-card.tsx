@@ -63,7 +63,7 @@ export function ProductCard({ product }: ProductCardProps) {
 
             <CardFooter>
                 <Button asChild className="w-full">
-                    <Link href={`/products/${product.id}`}>
+                    <Link href={`/products/${product._id}`}>
                         مشاهده محصول
                     </Link>
                 </Button>

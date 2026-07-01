@@ -1,5 +1,5 @@
 export type Product = {
-    id: string;
+    _id: string;
     name: string;
     price: number;
     description: string;
@@ -10,7 +10,10 @@ export type Product = {
     isActive: boolean;
     createdAt?: string;
     updatedAt?: string;
-
+    slug: string;
+    ratingsAverage:number;
+    ratingsCount:number;
+    soldCount:number;
 };
 export type Category = {
     id: string;
